@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Whatcolorisit</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
+</head>
+<body>
+<style>
+    body {
+        transition: all 1s ease-in-out;
+    }
+    #time {
+        margin-top: 15%;
+        text-align: center;
+        font-size: 116px;
+        color: white;
+        font-family: "Open Sans",sans-serif;
+        font-weight: 300;
+    }
+    #color {
+        margin-top: 5%;
+        text-align: center;
+        font-size: 30px;
+        color:rgba(240, 240, 240, 1);
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+    }
+</style>
+<script type="text/javascript">
+/**
+* Created by PC on 09.06.2016.
+*/
+function whatcolorIsIt () {
+var date = new Date(),
+hour = date.getHours(),
+minute = date.getMinutes(),
+second = date.getSeconds();
+second = second <=9 ? '0' + second : second ;
+minute = minute <=9 ? '0' + minute : minute
+document.body.style.backgroundColor = '#' + hour + String(minute) + second ;
+document.getElementById('time').innerHTML = hour + " : " + minute + " : " + second ;
+document.getElementById('color').innerHTML = "#" + hour + minute + second ;
+}
+setInterval(whatcolorIsIt, 1000);
+</script>
+<div id="time"></div>
+<div id="color"></div>
+</body>
+</html>
